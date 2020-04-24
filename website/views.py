@@ -7,7 +7,8 @@ from meetings.models import Meeting
 # Create your views here.
 def welcome(request):
     num_meetings = Meeting.objects.count()
-    return render(request,'website/welcome.html',{'num_meetings':num_meetings})
+    meetings = Meeting.objects.all()
+    return render(request,'website/welcome.html',{'num_meetings':num_meetings, 'meetings':meetings})
 
 def date(request):
     return HttpResponse(f'This page was served at {datetime.now()}')

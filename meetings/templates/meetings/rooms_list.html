@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeting Detail</title>
+    <title>Rooms</title>
 </head>
 <body>
-    <h1>{{meeting.title}}</h1>
-    <p>This meeting has been scheduled on {{meeting.date}} at {{meeting.start_time}} in <strong>{{meeting.room}}</strong></p>
+    <h1>Rooms</h1>
+    <p>There are currently {{num_rooms}} rooms.</p>
+    <ul>
+        {% for room in rooms %}
+            <li>{{room}}</li>
+        {% endfor%}
+    </ul>
     <p><a href="{% url 'welcome' %}">back to Home</a></p>
 </body>
 </html>

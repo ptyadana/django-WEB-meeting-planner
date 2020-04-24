@@ -6,9 +6,19 @@
     <title>Welcome</title>
 </head>
 <body>
-    <strong>Welcome to Meeting Planner</strong>
+    <h1>Welcome to Meeting Planner !</h1>
     <p>
         There are currently {{num_meetings}} meetings in the database.
     </p>
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
+            </li>
+        {% endfor%}
+    </ul>
+    <h3>Rooms</h3>
+    <a href="{% url 'rooms' %}">Rooms</a>
 </body>
 </html>
