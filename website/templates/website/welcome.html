@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title%}Welcome{% endblock %}
+
+{% block content %}
     <h1>Welcome to Meeting Planner !</h1>
     <p>
         There are currently {{num_meetings}} meetings in the database.
     </p>
+    
     <h2>Meetings</h2>
     <ul>
         {% for meeting in meetings %}
@@ -18,7 +16,6 @@
             </li>
         {% endfor%}
     </ul>
-    <h3>Rooms</h3>
-    <a href="{% url 'rooms' %}">Rooms</a>
-</body>
-</html>
+    <h3><a href="{% url 'rooms' %}">Rooms List</a></h3>
+    
+{% endblock %}
