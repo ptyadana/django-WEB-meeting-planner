@@ -20,7 +20,7 @@ olefile==0.46
 Pillow==7.0.0
 psycopg2==2.8.4
 pycodestyle==2.5.0
-Pygments==2.6.1
+Pygments==2.7.4
 pylint==0.28.0
 python-dateutil==2.8.1
 python-decouple==3.3
